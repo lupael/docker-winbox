@@ -4,13 +4,6 @@ MAINTAINER ISPbills <support@ispbills.com>
 
 ENV DISPLAY=":1"
 
-RUN  git clone https://github.com/novnc/noVNC.git /opt/noVNC \
-RUN  git clone https://github.com/kanaka/websockify /opt/noVNC/utils/websockify \
-RUN  ln -s /opt/noVNC/vnc.html /opt/noVNC/index.html \
-RUN  rm -rf /opt/noVNC/.git \
-RUN  rm -rf /opt/noVNC/utils/websockify/.git \
-RUN  rm -fr /opt/noVNC/vnc_lite.html \
-RUN  rm -rf /apk /tmp/* /var/cache/apk/*
 
 RUN addgroup alpine \
 RUN  adduser  -G alpine -s /bin/sh -D alpine \
