@@ -5,7 +5,6 @@ MAINTAINER ISPbills <support@ispbills.com>
 ENV DISPLAY=":1"
 
 RUN apk add --no-cache --update netcat-openbsd busybox-extras sudo python git bash supervisor
-  && update-ms-fonts \
   && git clone https://github.com/novnc/noVNC.git /opt/noVNC \
   && git clone https://github.com/kanaka/websockify /opt/noVNC/utils/websockify \
   && ln -s /opt/noVNC/vnc.html /opt/noVNC/index.html \
