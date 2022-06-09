@@ -5,17 +5,17 @@ MAINTAINER ISPbills <support@ispbills.com>
 ENV DISPLAY=":1"
 
 RUN apk add --no-cache --update netcat-openbsd busybox-extras sudo python git bash supervisor
-  && git clone https://github.com/novnc/noVNC.git /opt/noVNC \
-  && git clone https://github.com/kanaka/websockify /opt/noVNC/utils/websockify \
-  && ln -s /opt/noVNC/vnc.html /opt/noVNC/index.html \
-  && rm -rf /opt/noVNC/.git \
-  && rm -rf /opt/noVNC/utils/websockify/.git \
-  && rm -fr /opt/noVNC/vnc_lite.html \
-  && rm -rf /apk /tmp/* /var/cache/apk/*
+  git clone https://github.com/novnc/noVNC.git /opt/noVNC \
+  git clone https://github.com/kanaka/websockify /opt/noVNC/utils/websockify \
+  ln -s /opt/noVNC/vnc.html /opt/noVNC/index.html \
+  rm -rf /opt/noVNC/.git \
+  rm -rf /opt/noVNC/utils/websockify/.git \
+  rm -fr /opt/noVNC/vnc_lite.html \
+  rm -rf /apk /tmp/* /var/cache/apk/*
 
 RUN addgroup alpine \
-  && adduser  -G alpine -s /bin/sh -D alpine \
-  && echo "alpine    ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers 
+  adduser  -G alpine -s /bin/sh -D alpine \
+  echo "alpine    ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers 
 
 # For access via VNC
 EXPOSE 5900
