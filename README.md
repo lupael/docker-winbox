@@ -16,7 +16,7 @@ docker pull lupael/novnc-winbox
 ```
 
 ```bash
-docker run --rm --name=winbox -tid -p -p 5901:5900 -p 18081:8080 lupael/novnc-winbox:latest
+docker run --rm --name=winbox -tid -p 5901:5900 -p 18081:8080 lupael/novnc-winbox:latest
 ```
 
 
